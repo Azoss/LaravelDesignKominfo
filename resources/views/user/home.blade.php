@@ -9,7 +9,7 @@
             height: 180px;
         }
         #hero{
-            background: url('{{asset('user/images/hero-bg.jpg')}}') top center;
+            background: url('{{asset('user/images/BST.png')}}') top center;
         }
         .image-center{
           display: block;
@@ -21,31 +21,44 @@
 @endsection
 
 @section('hero')
-    <h1>Welcome to Pemkot Surakarta</h1>
-    <h2>sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss</h2>
-    <a href="#about" class="btn-get-started">Get Started</a>
+    <div class="hero-container">
+        <div class="hero-logo">
+            <img src="{{ asset('user/images/LOGO-PEMKOT-1-2.png') }}" alt="Pemkot Surakarta Logo">
+        </div>
+        <a href="#about" class="btn-get-started">Cari Hal tentang Surakarta</a>
+    </div>
 @endsection
+
 
 
 @section('content')
 
-      <!--========================== About Us Section ============================-->
-      <section id="about">
-        <div class="container">
-          <div class="row about-container">
+      <!--========================== Berita Terkini Section ============================-->
+      <section id="category">
+        <div class="container wow fadeInUp">
+          <div class="section-header">
+            <h3 class="section-title">Berita Terkini</h3>
+            <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+          </div>
+          <div class="row">
   
-            <div class="col-lg-7 content order-lg-1 order-2">
-              <h2 class="title">Tentang Kami</h2>
-              <p> {!!$about[0]->caption!!}</p>
-            </div>
-  
-            <div class="col-lg-5 background order-lg-2 order-1 wow fadeInRight" 
-                style="background: url('{{asset('about_image/'.$about[0]->image)}}') center top no-repeat; background-size: cover;"></div>
+          <div class="row" id="category-wrapper">
+            @foreach ($categories as $category)
+                <div class="col-md-4 col-sm-12 category-item filter-app" >
+                      <a href="">
+                        <img src="{{asset('category_image/'.$category->image)}}" class="image-center">
+                        <div class="details">
+                          <h4>{{$category->name}}</h4>
+                          <span>{{$category->description}}</span>
+                        </div>
+                      </a>
+                </div>
+            @endforeach  
           </div>
   
         </div>
-      </section>
-  
+      </section><!-- #category -->
+      
       <!--========================== Services Section ============================-->
       <section id="services">
         <div class="container wow fadeIn">
@@ -94,33 +107,7 @@
           </div>
   
         </div>
-      </section>
-  
-      <!--========================== category Section ============================-->
-      <section id="category">
-        <div class="container wow fadeInUp">
-          <div class="section-header">
-            <h3 class="section-title">Blog Kami</h3>
-            <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
-          </div>
-          <div class="row">
-  
-          <div class="row" id="category-wrapper">
-            @foreach ($categories as $category)
-                <div class="col-md-4 col-sm-12 category-item filter-app" >
-                      <a href="">
-                        <img src="{{asset('category_image/'.$category->image)}}" class="image-center">
-                        <div class="details">
-                          <h4>{{$category->name}}</h4>
-                          <span>{{$category->description}}</span>
-                        </div>
-                      </a>
-                </div>
-            @endforeach  
-          </div>
-  
-        </div>
-      </section>
+      </section><!-- #call-to-action -->
   
       <!--========================== Gallery Section ============================-->
       <section id="contact" style="padding-bottom:85px">
@@ -158,5 +145,5 @@
           </div>
   
         </div>
-      </section>
+      </section><!-- #contact -->
 @endsection
