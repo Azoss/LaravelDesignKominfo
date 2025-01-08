@@ -21,8 +21,8 @@
 @endsection
 
 @section('hero')
-    <h1>Welcome to Jogja-Travel</h1>
-    <h2>Kami adalah agen travel terpercaya dan jaminan layanan perencanaan wisata yang mudah dan murah</h2>
+    <h1>Welcome to Pemkot Surakarta</h1>
+    <h2>sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss</h2>
     <a href="#about" class="btn-get-started">Get Started</a>
 @endsection
 
